@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cocktails</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-green-700 text-white font-sans min-h-screen">
+  <nav class="bg-black p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">Cocktails</h1>
+    <div>
+      <a href="ingredient-search.html" 
+         class="text-white underline hover:text-green-300 transition-colors duration-300">
+        Search by Ingredient
+      </a>
+    </div>
+  </nav>
+
+  <section class="p-4 space-y-4 sm:flex sm:space-y-0 sm:space-x-4 relative">
+    <div class="relative w-full">
+      <input id="searchInput" type="text" placeholder="Search cocktail..."
+             class="w-full p-2 rounded text-black min-h-[2.5rem]" oninput="showSuggestions()"/>
+      <ul id="suggestions" class="absolute z-10 bg-white text-black w-full rounded shadow mt-1 hidden max-h-40 overflow-y-auto"></ul>
+    </div>
+
+    <div class="flex gap-2 items-stretch">
+      <button onclick="searchCocktail()" class="bg-white text-black px-4 py-0 rounded min-h-[2.5rem]">
+        Search
+      </button>
+      <button onclick="fetchRandomCocktail()" class="bg-black text-white px-4 py-0 rounded min-h-[2.5rem] border border-white hover:bg-green-600 transition">
+        Random
+      </button>
+    </div>
+  </section>
+
+  <main id="cocktailContainer" class="p-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3"></main>
+
+  <aside class="hidden sm:block p-4"></aside>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

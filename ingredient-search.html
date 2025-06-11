@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Search Cocktails by Ingredient</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-green-700 text-white font-sans min-h-screen">
+  <nav class="bg-black p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">Cocktails by Ingredient</h1>
+    <div>
+      <a href="index.html" 
+         class="text-white underline hover:text-green-300 transition-colors duration-300">
+        Search by Name
+      </a>
+    </div>
+  </nav>
+
+  <section class="p-4 space-y-4 max-w-md mx-auto">
+    <input id="ingredientInput" type="text" placeholder="Enter an ingredient..."
+           class="w-full p-2 rounded text-black min-h-[2.5rem]" />
+    <button onclick="searchByIngredient()" 
+            class="bg-white text-black px-4 py-2 rounded mt-2 w-full hover:bg-green-300 transition">
+      Search
+    </button>
+  </section>
+
+  <main id="cocktailContainer" class="p-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3 max-w-5xl mx-auto"></main>
+  <script src="script.js" defer></script>
+</body>
+</html>
