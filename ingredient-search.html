@@ -17,16 +17,20 @@
     </div>
   </nav>
 
-  <section class="p-4 space-y-4 max-w-md mx-auto">
-    <input id="ingredientInput" type="text" placeholder="Enter an ingredient..."
-           class="w-full p-2 rounded text-black min-h-[2.5rem]" />
-    <button onclick="searchByIngredient()" 
-            class="bg-white text-black px-4 py-2 rounded mt-2 w-full hover:bg-green-300 transition">
-      Search
-    </button>
-  </section>
+  <header>
+    <form class="p-4 space-y-4 max-w-md mx-auto" onsubmit="event.preventDefault(); searchByIngredient();">
+      <label for="ingredientInput" class="sr-only">Enter an ingredient</label>
+      <input id="ingredientInput" type="text" placeholder="Enter an ingredient..."
+             class="w-full p-2 rounded text-black min-h-[2.5rem]" />
+      <button type="submit" 
+              class="bg-white text-black px-4 py-2 rounded mt-2 w-full hover:bg-green-300 transition">
+        Search
+      </button>
+    </form>
+  </header>
 
   <main id="cocktailContainer" class="p-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3 max-w-5xl mx-auto"></main>
+
   <script src="script.js" defer></script>
 </body>
 </html>
