@@ -17,22 +17,25 @@
     </div>
   </nav>
 
-  <section class="p-4 space-y-4 sm:flex sm:space-y-0 sm:space-x-4 relative">
-    <div class="relative w-full">
-      <input id="searchInput" type="text" placeholder="Search cocktail..."
-             class="w-full p-2 rounded text-black min-h-[2.5rem]" oninput="showSuggestions()"/>
-      <ul id="suggestions" class="absolute z-10 bg-white text-black w-full rounded shadow mt-1 hidden max-h-40 overflow-y-auto"></ul>
-    </div>
+  <header>
+    <form class="p-4 space-y-4 sm:flex sm:space-y-0 sm:space-x-4 relative" onsubmit="event.preventDefault(); searchCocktail();">
+      <label for="searchInput" class="sr-only">Search cocktail</label>
+      <div class="relative w-full">
+        <input id="searchInput" type="text" placeholder="Search cocktail..."
+               class="w-full p-2 rounded text-black min-h-[2.5rem]" oninput="showSuggestions()"/>
+        <ul id="suggestions" class="absolute z-10 bg-white text-black w-full rounded shadow mt-1 hidden max-h-40 overflow-y-auto"></ul>
+      </div>
 
-    <div class="flex gap-2 items-stretch">
-      <button onclick="searchCocktail()" class="bg-white text-black px-4 py-0 rounded min-h-[2.5rem]">
-        Search
-      </button>
-      <button onclick="fetchRandomCocktail()" class="bg-black text-white px-4 py-0 rounded min-h-[2.5rem] border border-white hover:bg-green-600 transition">
-        Random
-      </button>
-    </div>
-  </section>
+      <div class="flex gap-2 items-stretch">
+        <button type="submit" class="bg-white text-black px-4 py-0 rounded min-h-[2.5rem]">
+          Search
+        </button>
+        <button type="button" onclick="fetchRandomCocktail()" class="bg-black text-white px-4 py-0 rounded min-h-[2.5rem] border border-white hover:bg-green-600 transition">
+          Random
+        </button>
+      </div>
+    </form>
+  </header>
 
   <main id="cocktailContainer" class="p-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3"></main>
 
